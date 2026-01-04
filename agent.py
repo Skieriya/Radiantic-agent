@@ -5,9 +5,9 @@ import warnings
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from phidata.agent import Agent
-from phidata.model.groq import Groq
-from phidata.tools.arxiv_toolkit import ArxivToolkit
+from phi.agent import Agent
+from phi.model.groq import Groq
+from phi.tools.arxiv_toolkit import ArxivToolkit
 
 # Fix for SSL: CERTIFICATE_VERIFY_FAILED
 try:
@@ -184,3 +184,4 @@ if __name__ == "__main__":
 
     port = int(os.getenv("PORT", 8000))
     uvicorn.run(app, host="0.0.0.0", port=port)
+
