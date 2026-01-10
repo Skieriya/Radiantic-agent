@@ -31,7 +31,7 @@ app.add_middleware(
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 if not GROQ_API_KEY:
     raise ValueError("GROQ_API_KEY environment variable is required. Set it in Railway or your .env file")
-MODEL_ID = "groq/compound-mini"  # High TPM limit, fast and free on Groq
+MODEL_ID = "llama-3.1-8b-instant"  # High TPM limit, fast and free on Groq
 
 # --- AGENT 1: THE RESEARCHER (Updated to use Groq) ---
 researcher = Agent(
@@ -173,4 +173,5 @@ if __name__ == "__main__":
     import uvicorn
     port = int(os.getenv("PORT", 8000))
     uvicorn.run(app, host="0.0.0.0", port=port)
+
 
